@@ -1,58 +1,60 @@
+// This function return the result of the computer.
 function computerPlay() {
     let options = ['rock', 'paper', 'scissors'];
     let option = options[Math.floor(Math.random() * options.length)];
     return option;
 }
+// First result
+//computerPlay('');
 
+// This function return an string with the winner of one single round
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt('Enter Rock Paper or Scissors:');
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = prompt('Enter Rock Paper or Scissors:').toLowerCase();
 
-    computerSelection = computerPlay();
-
+    computerSelection = computerPlay('');
+    let winnerRound = '';
     if (playerSelection === computerSelection) {
-        return 'draw';
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors'){
-        return 'player';
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper'){
-        return 'player';
-    } else if (playerSelection === 'paper' && computerSelection === 'rock'){
-        return 'player';
-    } else if (computerSelection === 'rock' && playerSelection === 'scissors'){
-        return 'computer';
-    } else if (computerSelection === 'scissors' && playerSelection === 'paper'){
-        return 'computer';
-    } else if (computerSelection === 'paper' && playerSelection === 'rock'){
-        return 'computer';
+        winnerRound = 'draw'
+        return winnerRound;
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors' || 
+                playerSelection === 'scissors' && computerSelection === 'paper' || 
+                playerSelection === 'paper' && computerSelection === 'rock'){
+                winnerRound = 'player'
+                return winnerRound;
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors' ||
+                computerSelection === 'scissors' && playerSelection === 'paper' ||
+                computerSelection === 'paper' && playerSelection === 'rock'){
+                winnerRound = 'computer'
+                return winnerRound;
     } 
 
 }
+//Second result
+//playRound('');
 
-//console.log(typeof(playRound()));
 
+// This function plays 5 rounds, shows the score and choose a winner
  function game() {
-    let userCount = 0;
+    let playerCount = 0;
     let computerCount = 0;
-    let gameOver = playRound()
-    for (let i = 0; i < 5; i++) {
-        playRound()
-        if (gameOver === 'player') {
-            userCount++;
-            console.log('User ' + userCount + ' - ' + computerCount + ' Computer')
-        } else if (gameOver === 'computer'){
+    for (i = 1 ; i <= 5 ; i++) {
+        winner = playRound('');
+        if (winner === 'player') {
+            playerCount++;
+            console.log('You won !!! Player ' + playerCount + ' - ' + computerCount + ' Computer')
+        } else if (winner === 'computer') {
             computerCount++;
-            console.log('User ' + userCount + ' - ' + computerCount + ' Computer')
-        } else if (gameOver === 'draw') {
-            console.log('User ' + userCount + ' - ' + computerCount + ' Computer')
-        }
-    
-     }
-    if (userCount > computerCount) {
-        console.log('The winner is User: ' + userCount + ' - ' + computerCount)
-    } else if (userCount < computerCount) {
-        console.log('The winner is Computer: ' + userCount + ' - ' + computerCount)
-    } else {
-        console.log('The game is Draw: ' + userCount + ' - ' + computerCount)
+            console.log('You lose !!! Player ' + playerCount + ' - ' + computerCount + ' Computer')
+        } 
+    }
+    if (playerCount > computerCount) {
+        console.log('The winner is User: ' + playerCount + ' - ' + computerCount)
+    } else if (playerCount < computerCount) {
+        console.log('The winner is Computer: ' + playerCount + ' - ' + computerCount)
+    } else if (playerCount === computerCount) {
+        console.log('The game is Draw: ' + playerCount + ' - ' + computerCount)
     }
 }
-console.log(game());
+// Third result
+game();
+ 
