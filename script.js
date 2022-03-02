@@ -45,7 +45,9 @@ function playRound(playerSelection, computerSelection) {
         } else if (winner === 'computer') {
             computerCount++;
             console.log('You lose !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
-        } 
+        } else {
+            console.log('Draw !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
+        }
     }
     if (playerCount > computerCount) {
         console.log('The winner is Player: ' + playerCount + ' - ' + computerCount);
