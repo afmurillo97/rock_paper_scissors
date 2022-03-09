@@ -30,33 +30,33 @@ function playRound(playerSelection, computerSelection) {
 
 }
 //Second result
-//playRound('');
+console.log(playRound()); 
 
 
 // This function plays 5 rounds, shows the score and choose a winner
- function game() {
-    let playerCount = 0;
-    let computerCount = 0;
-    for (i = 1 ; i <= 5 ; i++) {
-        winner = playRound('');
-        if (winner === 'player') {
-            playerCount++;
-            console.log('You won !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
-        } else if (winner === 'computer') {
-            computerCount++;
-            console.log('You lose !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
-        } else {
-            console.log('Draw !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
-        }
-    }
-    if (playerCount > computerCount) {
-        console.log('The winner is Player: ' + playerCount + ' - ' + computerCount);
-    } else if (playerCount < computerCount) {
-        console.log('The winner is Computer: ' + playerCount + ' - ' + computerCount);
-    } else if (playerCount === computerCount) {
-        console.log('The game is Draw: ' + playerCount + ' - ' + computerCount);
-    }
-}
+//  function game() {
+//     let playerCount = 0;
+//     let computerCount = 0;
+//     for (i = 1 ; i <= 5 ; i++) {
+//         winner = playRound('');
+//         if (winner === 'player') {
+//             playerCount++;
+//             console.log('You won !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
+//         } else if (winner === 'computer') {
+//             computerCount++;
+//             console.log('You lose !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
+//         } else {
+//             console.log('Draw !!! Player ' + playerCount + ' - ' + computerCount + ' Computer');
+//         }
+//     }
+//     if (playerCount > computerCount) {
+//         console.log('The winner is Player: ' + playerCount + ' - ' + computerCount);
+//     } else if (playerCount < computerCount) {
+//         console.log('The winner is Computer: ' + playerCount + ' - ' + computerCount);
+//     } else if (playerCount === computerCount) {
+//         console.log('The game is Draw: ' + playerCount + ' - ' + computerCount);
+//     }
+// }
 // Third result
-game();
+//game();
  

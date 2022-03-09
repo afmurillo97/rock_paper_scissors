@@ -1,0 +1,18 @@
+div.answers{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    list-style-type: none;
+    margin-top: 500px;
+}
+
+.answer{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
