@@ -32,27 +32,41 @@ const playerOptions = document.querySelectorAll('button');
 let playerCount = 0;
 let computerCount = 0;
 
+const container = document.querySelector('.container');
+const winnerResult = document.createElement('h1');
+const winnerGame = document.createElement('h1');
+container.appendChild(winnerResult);
+container.appendChild(winnerGame);
+
+winnerGame.classList.add('result');
+
 playerOptions.forEach((button) => {
     // and for each one to add a 'click' listener
     button.addEventListener('click', function(e){
+        winnerGame.textContent = '';
         optionPlayer = button.id;
         let winner = playRound(optionPlayer, );
         if (winner === 'player') {
             playerCount++;
-            console.log('you win!!! Player: ' + playerCount + '-' + computerCount + ' Computer');
+            winnerResult.classList.add('result');
+            winnerResult.textContent = 'you win!!! Player ' + playerCount + '-' + computerCount + ' Computer'
         } else if (winner === 'computer') {
             computerCount++;
-            console.log('you lose!!! Player: ' + playerCount + '-' + computerCount + ' Computer');
+            winnerResult.classList.add('result');
+            winnerResult.textContent = 'you lose!!! Player ' + playerCount + '-' + computerCount + ' Computer'
         } else {
-            console.log('Draw!!! Player: ' + playerCount + '-' + computerCount + ' Computer');
+            winnerResult.classList.add('result');
+            winnerResult.textContent = 'Draw!!! Player ' + playerCount + '-' + computerCount + ' Computer'
         }
         // after to play 5 games, reset the counters
         if (playerCount === 5) {
-            console.log('THE WINNER IS PLAYER');
+            winnerGame.classList.add('winner-result');
+            winnerGame.textContent = 'THE WINNER IS PLAYER';
             playerCount = 0;
             computerCount = 0;
         } else if (computerCount === 5) {
-            console.log('THE WINNER IS COMPUTER');
+            winnerGame.classList.add('winner-result');
+            winnerGame.textContent = 'THE WINNER IS COMPUTER';
             playerCount = 0;
             computerCount = 0;
         };
