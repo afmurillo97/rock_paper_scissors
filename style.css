@@ -1,7 +1,9 @@
+body {
+  font-family: "Audiowide", sans-serif;
+}
 div.answers{
     display: flex;
-    flex: 1;
-    min-height: 100vh;
+    min-height: 50vh;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -12,6 +14,7 @@ div.answers{
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 25px;
     margin-left: 30px;
     margin-bottom: 30px;
     cursor: pointer;
@@ -34,6 +37,7 @@ div.answers{
     transition: .3s;
     background-position: 100%;
     color: #c266d3;
+    box-shadow: 0 0 10px 0 #c266d3 inset, 0 0 20px 2px #c266d3;
   }
   @keyframes pulse {
     0% {
@@ -46,19 +50,10 @@ div.answers{
       transform: scale(1);
     }
   }
+.result{
+  display: flex;
+  justify-content: center;
+  color: #c266d3;
+  font-size: 40px;
 
-  /* .button-2 {
-    color: #fff;
-    border: 3px solid #c266d3;
-    background-image: -webkit-linear-gradient(30deg, #c266d3 50%, transparent 50%);
-    background-image: linear-gradient(30deg, #c266d3 50%, transparent 50%);
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
-  }
-  .button-2:hover {
-    background-position: 100%;
-    color: #c266d3;
-  } */
+}
